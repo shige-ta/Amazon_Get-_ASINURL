@@ -1,10 +1,23 @@
 
 chrome.tabs.getSelected(null, function(tab){  
     let url = tab.url;
+    let startnum;
     console.log(url);
-    let startnum = url.indexOf("/dp/");
-    console.log(startnum);
-    let substr01 = url.substr(startnum + 4);
+    let substr01;
+    while(1){
+        let startnum_dp = url.indexOf("/dp/");
+        let startnum_product = url.indexOf("/product/");
+        if(startnum_dp != -1){
+            startnum = startnum_dp;
+            substr01 = url.substr(startnum + 4);
+            break;
+        }
+        else if(startnum_product != -1){
+            startnum = startnum_product;
+            substr01 = url.substr(startnum + 9);
+            break;
+        }
+    }
     console.log(substr01);
     let endnum;
     while(1){
@@ -29,7 +42,6 @@ chrome.tabs.getSelected(null, function(tab){
     if(navigator.clipboard){
         navigator.clipboard.writeText(clipboadURL);
     }
-
 })
 
 
