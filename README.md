@@ -1,1 +1,4 @@
 # Amazon_Get-_ASINURL
+
+Amazonの商品ページでASIN番号を取得し、むりやり短縮URLっぽくしてクリップボードにコピーするChrome拡張機能
+多分、不具合あり
