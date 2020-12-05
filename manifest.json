@@ -5,7 +5,7 @@
   "description": "AmazonのASINURL取得するChrome拡張です",
   "content_scripts": [
     {
-      "matches": ["https://www.amazon.co.jp/*"],
+      "matches": ["https://www.amazon.co.jp/dp/*","https://www.amazon.co.jp/product/*"],
       "css":["style.css"]
     }
   ],
